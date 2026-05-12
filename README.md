@@ -6,23 +6,23 @@ The Cobuff source repository can stay private. This repository must stay public 
 
 ## Current Release
 
-Release: `v1.0.675`
+Release: `v1.0.676`
 
 Download page:
 
 ```text
-https://github.com/iyang1016/cobuff-releases/releases/tag/v1.0.675
+https://github.com/iyang1016/cobuff-releases/releases/tag/v1.0.676
 ```
 
 ## Assets
 
 | Asset | Platform | Size | SHA256 |
 |---|---:|---:|---|
-| `cobuff-darwin-arm64.tar.gz` | macOS Apple Silicon | 31,272,084 | `08BA7806CFC041BF50DAEF05B55A5C9096252FE20DB080E2BF943631A85D0A71` |
-| `cobuff-darwin-x64.tar.gz` | macOS Intel | 33,030,777 | `F66097347BF87CEF5B5AB4C67122476827095DFA4C7C4E7A80FC73574C016C0B` |
-| `cobuff-linux-arm64.tar.gz` | Linux ARM64 | 49,013,125 | `8CE0D37DAECD78B2DA018C53E7C5F0CA69CDCC3D6B9745B2FB9253EA651AA118` |
-| `cobuff-linux-x64.tar.gz` | Linux x64 | 49,091,387 | `70DEB2E74AEC824D12528CCC4D4F9C51E552B282F64456B376505BDDA5DADDB3` |
-| `cobuff-win32-x64.tar.gz` | Windows x64 | 49,304,015 | `9A3AB3F0F42F67C0A074097862030541B892707E406D7470D140762419E3B26E` |
+| `cobuff-darwin-arm64.tar.gz` | macOS Apple Silicon | 31,272,098 | `C9DCF3F54D1B5C4A275E1EC36F11A6DEB8AA5D3A463C2126CB16FFA145050E06` |
+| `cobuff-darwin-x64.tar.gz` | macOS Intel | 33,030,782 | `989684FD39066ABCD6977742F60AEB3C00697F1D58A63A322FE086D2F2B6A8E6` |
+| `cobuff-linux-arm64.tar.gz` | Linux ARM64 | 49,013,156 | `ECB26EC263BFA26D7BDDEC306853827BBC204AE3077233C559580E26AE8805CA` |
+| `cobuff-linux-x64.tar.gz` | Linux x64 | 49,091,400 | `3DD0A247B9486D8FD5560F0562141669255138A2B9F2DC71187EFFF86899F62B` |
+| `cobuff-win32-x64.tar.gz` | Windows x64 | 50,543,254 | `90CCDAC04B13E244F0BD76F5F1F237A134F629EA7C68E9549A981779A00B71D2` |
 
 ## Release Rule
 
