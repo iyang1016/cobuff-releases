@@ -36,6 +36,7 @@ jobs:
       version: ${{ steps.release.outputs.version }}
       source_repository: ${{ steps.release.outputs.source_repository }}
       source_ref: ${{ steps.release.outputs.source_ref }}
+      npm_published: ${{ steps.package.outputs.npm_published }}
     steps:
       - name: Resolve release inputs
         id: release
@@ -92,6 +93,7 @@ jobs:
           token: ${{ secrets.COBUFF_SOURCE_TOKEN || secrets.COBUFF_GITHUB_TOKEN || secrets.CODEBUFF_GITHUB_TOKEN }}
 
       - name: Validate source release package
+        id: package
         shell: bash
         run: |
           set -euo pipefail
@@ -102,8 +104,10 @@ jobs:
           fi
 
           if npm view "cobuff@${{ steps.release.outputs.version }}" version >/dev/null 2>&1; then
-            echo "cobuff@${{ steps.release.outputs.version }} is already published on npm." >&2
-            exit 1
+            echo "cobuff@${{ steps.release.outputs.version }} is already published on npm. GitHub release assets will still be built, and npm publish will be skipped."
+            echo "npm_published=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "npm_published=false" >> "$GITHUB_OUTPUT"
           fi
 
   build-binaries:
@@ -311,9 +315,12 @@ jobs:
             - `cobuff-win32-x64.tar.gz`
           files: |
             binaries/*/cobuff-*.tar.gz
+          fail_on_unmatched_files: true
+          overwrite_files: true
 
   publish-npm:
     needs: [validate-release, create-github-release]
+    if: needs.validate-release.outputs.npm_published != 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
