@@ -4,16 +4,6 @@ Public binary release repository for the `cobuff` npm package.
 
 The Cobuff source repository can stay private. This repository must stay public so `npm install -g cobuff` users can download platform binaries without GitHub authentication.
 
-## Current Release
-
-Release: `v1.0.676`
-
-Download page:
-
-```text
-https://github.com/iyang1016/cobuff-releases/releases/tag/v1.0.676
-```
-
 ## Assets
 
 | Asset | Platform | Size | SHA256 |
