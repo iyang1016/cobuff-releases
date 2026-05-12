@@ -346,5 +346,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if npm view "cobuff@${{ needs.validate-release.outputs.version }}" version >/dev/null 2>&1; then
+            echo "cobuff@${{ needs.validate-release.outputs.version }} is already published on npm. Skipping npm publish."
+            exit 0
+          fi
           cd source/cli/release
           npm publish --access public
